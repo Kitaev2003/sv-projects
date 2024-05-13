@@ -1,0 +1,132 @@
+{
+  "creator": "Yosys 0.41+24 (git sha1 75f01ccee, clang++ 14.0.0-1ubuntu1.1 -fPIC -Os)",
+  "modules": {
+    "clk_div": {
+      "attributes": {
+        "hdlname": "clk_div",
+        "dynports": "00000000000000000000000000000001",
+        "top": "00000000000000000000000000000001",
+        "src": "svLDL.v:35.1-52.10"
+      },
+      "parameter_default_values": {
+        "MAX": "00000000000000000000000000000001"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "clk_div": {
+          "direction": "output",
+          "bits": [ 3 ]
+        }
+      },
+      "cells": {
+        "$add$svLDL.v:49$2": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "svLDL.v:49.20-49.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4, 3 ],
+            "B": [ "1" ],
+            "Y": [ 5, 6 ]
+          }
+        },
+        "$procdff$6": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "svLDL.v:45.5-51.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 7, 8 ],
+            "Q": [ 4, 3 ]
+          }
+        },
+        "$procmux$4": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "svLDL.v:46.12-46.20|svLDL.v:46.9-50.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6 ],
+            "B": [ "0", "0" ],
+            "S": [ 3 ],
+            "Y": [ 7, 8 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\ctr[1:0]": {
+          "hide_name": 1,
+          "bits": [ 7, 8 ],
+          "attributes": {
+            "src": "svLDL.v:45.5-51.8"
+          }
+        },
+        "$add$svLDL.v:49$2_Y": {
+          "hide_name": 1,
+          "bits": [ 5, 6 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "svLDL.v:38.25-38.28"
+          }
+        },
+        "clk_div": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "svLDL.v:39.25-39.32"
+          }
+        },
+        "ctr": {
+          "hide_name": 0,
+          "bits": [ 4, 3 ],
+          "attributes": {
+            "src": "svLDL.v:41.17-41.20"
+          }
+        }
+      }
+    }
+  }
+}
